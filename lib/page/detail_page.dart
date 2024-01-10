@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../bo/artcile.dart';
 import '../bo/cart.dart';
@@ -29,7 +30,7 @@ class DetailPage extends StatelessWidget {
                 Text(article.getPrixEnEuros()),
                 Spacer(),
                 ElevatedButton(
-                    onPressed: () => context.rd<Cart>().add(article),
+                    onPressed: () => context.read<Cart>().add(article),
                     child: const Text('Ajouter au panier'))
               ])),
         ));
