@@ -1,6 +1,7 @@
 import 'package:epsi_shop/page/about_us_page.dart';
 import 'package:epsi_shop/page/cart_page.dart';
 import 'package:epsi_shop/page/home_page.dart';
+import 'package:epsi_shop/page/payment_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -48,6 +49,12 @@ final GoRouter _router = GoRouter(
             return AboutUsPage();
           },
         ),
+        GoRoute(
+            path: 'payment',
+            name: 'payment',
+            builder: (BuildContext context, GoRouterState state) {
+              return PaymentPage();
+            }),
         GoRoute(
           path: 'detail',
           name: 'detail',

@@ -1,5 +1,6 @@
 import 'package:epsi_shop/bo/artcile.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
 import '../bo/cart.dart';
@@ -71,7 +72,7 @@ class ListCart extends StatelessWidget {
             Text('Votre panier total est de'),
             Spacer(),
             Text(
-              '${cart.getTotalEnEuros()}',
+              cart.getTotalEnEuros(),
               style: const TextStyle(fontWeight: FontWeight.bold),
             )
           ]),
@@ -101,7 +102,10 @@ class ListCart extends StatelessWidget {
           SizedBox(height: 10),
           ElevatedButton(
               onPressed: () => context.read<Cart>().removeAll(),
-              child: const Text('Vider le panier'))
+              child: const Text('Vider le panier')),
+          ElevatedButton(
+              onPressed: () => context.goNamed('payment'),
+              child: const Text('Procéder au paiment'))
         ]));
   }
 }
